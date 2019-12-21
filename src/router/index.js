@@ -7,6 +7,10 @@ const Home = () =>import('../views/Home');
 const Find = () =>import('../views/Find');
 const HotList = () =>import('../views/HotList');
 const Specials = () =>import('../views/Specials');
+// import Home from '../views/Home'
+// import Find from '../views/Find'
+// import HotList from '../views/HotList'
+// import Specials from '../views/Specials'
 
 Vue.use(VueRouter)
 
@@ -17,13 +21,9 @@ const routes = [
     },{
         path:'/home',
         component:Home,
-        title:'首页'
     },{
         path:'/find',
         component:Find,
-        meta:{
-            title:'发现'
-        }
     },{
         path:'/hotlist',
         component:HotList
