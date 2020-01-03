@@ -21,7 +21,7 @@ a {
   display: inline-block;
   margin: 0 16px;
   padding: 16px 0;
-  border-bottom: 2px solid #fff;
+  border-bottom: 4px solid #fff;
   cursor: pointer;
 }
 a.router-link-active{
