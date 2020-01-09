@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <zhi-hu-top/>
-    <router-view></router-view>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 
@@ -20,5 +22,12 @@ export default {
   padding:0;
   margin:0;
   box-sizing: border-box;
+}
+img{
+  max-width: 100%;
+  width:auto;
+}
+html,body{
+  background:#eee;
 }
 </style>

@@ -5,7 +5,7 @@
                 <search-image class="img"/>
                 <item-left/>
             </div>
-            <item-search/>
+            <item-search :nav-data="navdata"/>
         </div>
         <div class="tail" :class="{isShow:isShow}">
             <search-image/>
@@ -19,17 +19,26 @@
 import ItemLeft from './zhihuitem/ItemLeft'
 import SearchImage from './zhihuitem/SearchImage'
 import ItemSearch from './zhihuitem/ItemSearch'
+import {getSelector} from '@/network/all'
 export default {
     name:'ZhiHuTop',
     components:{
         ItemLeft,
         SearchImage,
-        ItemSearch
+        ItemSearch,
     },
     data(){
         return {
-            isShow:false
+            isShow:false,
+            navdata:[]
         }
+    },
+    created(){
+        getSelector().then(res=>{
+             const navdata = res.top_search.words;
+             this.navdata = navdata
+        })
+       
     },
     mounted(){
         window.addEventListener('scroll',this.myScroll)
@@ -54,7 +63,7 @@ export default {
         box-shadow: 0px 4px 5px #cccccc;
         position:fixed;
         top:0;
-        
+        z-index:999;
     }
     
     .title,.tail{
